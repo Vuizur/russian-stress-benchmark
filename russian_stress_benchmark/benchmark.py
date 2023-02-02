@@ -12,7 +12,11 @@ def benchmark_everything_in_folder(input_folder: str, output_folder: str, stress
                     text = f.read()
                     # Run stress function
                     stressed_text = stress_function(text)
+                    output_path = os.path.join(output_folder, file)
+                    # Create output path if it doesn't exist
+                    if not os.path.exists(output_path):
+                        os.makedirs(output_path)
                     # Write result to output file
-                    with open(os.path.join(output_folder, file), "w", encoding="utf-8") as f:
+                    with open(output_path, "w", encoding="utf-8") as f:
                         f.write(stressed_text)
                         

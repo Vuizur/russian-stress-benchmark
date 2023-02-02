@@ -7,8 +7,12 @@ readme = "README.md"
 packages = [{include = "russian_stress_benchmark"}]
 
 [tool.poetry.dependencies]
-python = ">=3.6"
+python = ">=3.6, <4.0"
+stressed-cyrillic-tools = "^0.1.10"
 
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.1"
 
 [build-system]
 requires = ["poetry-core"]

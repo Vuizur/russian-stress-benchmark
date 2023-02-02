@@ -1,0 +1,1 @@
+from .benchmark import benchmark_everything_in_folder

@@ -13,7 +13,6 @@ def benchmark_everything_in_folder(input_folder: str, output_folder: str, stress
                     
                     # Subtract the input folder from the root path to get the relative path
                     relative_path = os.path.relpath(root, input_folder)
-                    print(relative_path)
 
                     # Read file
                     text = f.read()

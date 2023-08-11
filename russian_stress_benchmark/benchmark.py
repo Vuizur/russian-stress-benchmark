@@ -1,10 +1,11 @@
 import os
+from typing import Callable
 from stressed_cyrillic_tools import unaccentify, remove_yo
 
 
-def benchmark_everything_in_folder(input_folder: str, output_folder: str, stress_function: callable, rmv_yo: bool = False) -> None:
+def benchmark_everything_in_folder(input_folder: str, output_folder: str, stress_function: Callable[[str], str], rmv_yo: bool = False) -> None:
     # Iterate over all txt files, also in subfolders
-    for root, dirs, files in os.walk(input_folder):
+    for root, _, files in os.walk(input_folder):
         for file in files:
             if file.endswith(".txt") or file.endswith(".ref"):
                 # Open file
